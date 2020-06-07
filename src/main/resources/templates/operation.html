@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Operation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="op.css">
+
+</head>
+<body>
+    <div class="wrapper">
+    <h4>Operation</h4>
+    <div class="buttons">
+        <button class="btn btn-info"id="Retrait">Retrait</button><br>
+        <button class="btn btn-secondary"id="Versement">Versement</button><br>
+        <button class="btn btn-success"id="Transaction">Transaction</button>
+    </div>
+
+    <form th:action="${operationType}" method=POST>
+        <br><br>
+
+        <div id="first"style="display:none;" >
+            <div class="form-group">        
+                    <input type="text" class="form-control" name="TypeOperation"value="retrait"  placeholder="lorem" readonly style="display:none;">
+            
+                    Code du compte <input type="text" class="form-control" id="codeCompte1"  placeholder="Saisissez le code du compte">
+                    Montant à retirer<input type="text" class="form-control "name="montant" placeholder="Saisissez le montant">
+            </div>
+            <input type="submit" value="valider">
+        </div>
+
+        <div id="second"style="display:none;" >
+                <div class="form-group">        
+                        <input type="text" class="form-control" name="TypeOperation" value="versement"  placeholder="Personnalisez le code" readonly style="display:none;">
+                
+                        Code du compte <input type="text" class="form-control" id="codeCompte1"  placeholder="Saisissez le code du compte ">
+                        Montant à verser<input type="text" class="form-control "name="montant" placeholder="Saisissez le montant">
+                </div>
+                <input type="submit" value="valider">
+            </div>
+
+            <div id="third"style="display:none;" >
+                    <div class="form-group">        
+                            <input type="text" class="form-control" name="TypeOperation" value="virement"  readonly style="display:none;">
+                    
+                            Code du compte <input type="text" class="form-control" id="codeCompte1"  placeholder="Saisissez le code du compte 1">           
+                            Code du compte <input type="text" class="form-control" id="codeCompte2"  placeholder="Saisissez le code du compte 2 ">
+                            Montant <input type="text" class="form-control "name="montant" placeholder="Saisissez le montant">
+                    </div>
+                    <input type="submit" value="valider">
+                </div>
+    
+    </form>
+</div>
+</body>
+<script>
+$(document).ready(function(){
+      $("#Retrait").click(function(){
+          $("#first").show();
+          $("#second").hide();
+          $('#third').hide();
+    });
+      $("#Versement").click(function(){
+          $("#first").hide();
+          $("#second").show();
+          $('#third').hide();
+    });
+      $("#Transaction").click(function(){
+          $("#first").hide();
+          $("#second").hide();
+          $('#third').show();
+    });
+})
+</script>
+</html>

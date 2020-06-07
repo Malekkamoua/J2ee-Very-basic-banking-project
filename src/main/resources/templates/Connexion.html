@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="form.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="wrapper">
+        <div class="container">
+            <h1>Visitez la banque</h1>
+            
+            <form  th:action="connection" method=POST>
+            	 <input type="text" name="nom"placeholder="Nom de l'tilisateur">
+                <input type="password" name="codeCompte" placeholder="Code du compte">
+                <button type="submit" id="login-button">Login</button>
+            </form>
+        </div>
+    </div>

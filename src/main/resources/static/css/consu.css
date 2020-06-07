@@ -1,0 +1,25 @@
+body{
+    background: #50a3a2;
+    background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+    font-family: 'Montserrat', sans-serif;
+}
+  .wrapper{
+    margin: 3% 20% 3% 20%;
+  background-color: white;
+  padding: 5%;
+  }
+  .wrapper h4{
+    color: #50a3a2;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  .btn{
+      position: absolute;
+      right: 25%;
+  }
+  .corp{
+    margin-top: 5%;
+  }
